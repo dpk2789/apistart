@@ -1,0 +1,28 @@
+version: '3.4'
+
+networks:
+  webapinetwork:
+
+services:
+  webapi4:
+    image: ${DOCKER_REGISTRY-}webapi4
+    container_name: webapi-application
+    ports:
+      - "5000:80"
+    build:
+      context: .
+      dockerfile: WebApi4/Dockerfile
+    depends_on: [ mssql ]
+    networks:
+    - webapinetwork
+
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql_server2022
+    ports: # not actually needed, because the two services are on the same network
+      - "8002:1433" 
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=Password#1
+    networks:
+      - webapinetwork
