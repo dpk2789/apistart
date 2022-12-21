@@ -1,11 +1,13 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DbInfrastructure
 {
-    public class AowContext : DbContext
+    public class AowContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         public AowContext(DbContextOptions<AowContext> options) : base(options)
         {

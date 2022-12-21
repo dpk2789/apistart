@@ -13,8 +13,8 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/)
-//               .AddEntityFrameworkStores<AowContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/)
+               .AddEntityFrameworkStores<AowContext>().AddDefaultTokenProviders();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
