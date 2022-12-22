@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace DbInfrastructure
+namespace DbMysqlInfrastructure
 {
-    public class AowContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+    public class DbMysqlContext : DbContext
     {
-        public AowContext(DbContextOptions<AowContext> options) : base(options)
+        public DbMysqlContext(DbContextOptions<DbMysqlContext> options) : base(options)
         {
 
             try
@@ -33,6 +32,5 @@ namespace DbInfrastructure
         }
 
         public DbSet<Product> Products { get; set; }
-
     }
 }

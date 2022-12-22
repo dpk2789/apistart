@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi4", "WebApi4\WebApi4.csproj", "{7165A5FC-ACF9-434A-9A5D-3C68EE839AA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi4", "WebApi4\WebApi4.csproj", "{7165A5FC-ACF9-434A-9A5D-3C68EE839AA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbInfrastructure", "DbInfrastructure\DbInfrastructure.csproj", "{35A01160-532A-403B-8F30-4EF50C8C20F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbInfrastructure", "DbInfrastructure\DbInfrastructure.csproj", "{35A01160-532A-403B-8F30-4EF50C8C20F1}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8D1862CC-E79D-4BF6-A1CE-58241C00CD24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbMysqlInfrastructure", "DbMysqlInfrastructure\DbMysqlInfrastructure.csproj", "{84569D8F-585E-43FC-80F8-0ECF560DC778}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi3", "WebApi3\WebApi3.csproj", "{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{8D1862CC-E79D-4BF6-A1CE-58241C00CD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D1862CC-E79D-4BF6-A1CE-58241C00CD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D1862CC-E79D-4BF6-A1CE-58241C00CD24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84569D8F-585E-43FC-80F8-0ECF560DC778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84569D8F-585E-43FC-80F8-0ECF560DC778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84569D8F-585E-43FC-80F8-0ECF560DC778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84569D8F-585E-43FC-80F8-0ECF560DC778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
