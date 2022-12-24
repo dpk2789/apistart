@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DbInfrastructure\DbInfrastructure.csproj" />
+    <ProjectReference Include="..\JwtAuth\JwtAuth.csproj" />
   </ItemGroup>
 
 </Project>

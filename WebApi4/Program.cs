@@ -1,5 +1,6 @@
 using DbInfrastructure;
 using DbInfrastructure.Repository;
+using JwtAuth;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +11,9 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<JwtTokenHandler>();
 
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/)
+builder.Services.AddIdentity<AppUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/)
                .AddEntityFrameworkStores<AowContext>().AddDefaultTokenProviders();
 
 builder.Services.AddEndpointsApiExplorer();

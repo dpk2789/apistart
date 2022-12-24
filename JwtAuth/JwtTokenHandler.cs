@@ -1,4 +1,4 @@
-﻿
+﻿using JwtAuth.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -11,7 +11,7 @@ namespace JwtAuth
         public const string secretKey = "dd1762da-eb43-4f0d-b7f8-9a241ab11b87";
         public const int expiryTime = 20;
 
-        public string GenerateTokenForUserAuthResult(AppUser user, IList<string> roles)
+        public AuthResponse GenerateJwtToken(LoginModel user, IList<string> roles)
         {
             var expiry = DateTime.UtcNow.AddMinutes(expiryTime);
             var key = Encoding.ASCII.GetBytes(secretKey);
@@ -21,11 +21,13 @@ namespace JwtAuth
             //add claims
             var claims = new ClaimsIdentity(new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, user.Id),
-                new Claim(ClaimTypes.Role, roles.FirstOrDefault())
+                new Claim(JwtRegisteredClaimNames.Sub, user.Username),               
             });
 
+            foreach (var userRole in roles)
+            {
+                new Claim(ClaimTypes.Role, userRole);
+            }
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -37,7 +39,13 @@ namespace JwtAuth
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var securityToken = jwtSecurityTokenHandler.CreateToken(tokenDescriptor);
             var tokenString = jwtSecurityTokenHandler.WriteToken(securityToken);
-            return tokenString;
+
+            return new AuthResponse
+            {
+                UserName = user.Username,
+                Token = tokenString,
+                ExpriesIn = (int)expiry.Subtract(DateTime.Now).TotalSeconds
+            };           
         }
     }
 
