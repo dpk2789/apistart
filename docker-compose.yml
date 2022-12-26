@@ -7,8 +7,8 @@ services:
   webapi4:
     image: ${DOCKER_REGISTRY-}webapi4
     container_name: webapi-application
-    ports:
-      - 5000:80
+    #ports:
+    #  - 5000:80
     build:
       context: .
       dockerfile: WebApi4/Dockerfile
@@ -46,8 +46,8 @@ services:
     build:
       context: .
       dockerfile: WebApi3/Dockerfile
-    ports:
-      - 5004:80
+    #ports:
+    #  - 5004:80
     depends_on: [ aowmysqldb ]
     networks:
       - webapinetwork
@@ -55,4 +55,15 @@ services:
     - DB_HOST=aowmysqldb
     #- DB_Name=aownew
     #- DB_SA_Password=Password#1
+
+
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - 5105:80
+    networks:
+      - webapinetwork
 

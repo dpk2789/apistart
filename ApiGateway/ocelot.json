@@ -1,0 +1,20 @@
+{
+  "Routes": [
+    //Product Web API
+    {
+      "UpstreamPathTemplate": "/api/Products/GetProducts",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "webapi3",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products/GetProducts"
+    }   
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5105"
+  }
+}

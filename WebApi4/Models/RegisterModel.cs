@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JwtAuth.Models
+namespace WebApi4.Models
 {
     public class RegisterModel
     {

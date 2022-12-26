@@ -1,4 +1,5 @@
 ﻿using DbMysqlInfrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,7 @@ namespace WebApi3.Controllers
 
         [HttpGet]
         [Route("GetProducts")]
+       // [Authorize]
         public async Task<IActionResult> Get()
         {
             return Ok(await _dbContext.Products.ToListAsync());
