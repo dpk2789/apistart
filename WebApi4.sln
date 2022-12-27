@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbMysqlInfrastructure", "Db
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi3", "WebApi3\WebApi3.csproj", "{DFA8258F-B31C-4BA4-98E9-6FF36D3E45C5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssql", "mssql", "{003EC95E-77F0-4C05-B46C-512D3AAEBFDA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{003EC95E-77F0-4C05-B46C-512D3AAEBFDA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mysql", "mysql", "{584B4174-4F35-4E4D-B230-AA5BB6FDD959}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{584B4174-4F35-4E4D-B230-AA5BB6FDD959}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuth", "JwtAuth\JwtAuth.csproj", "{73EDCDE3-AA90-44B2-A8EC-0B94554EF672}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apigateway", "apigateway", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0BA60E5D-8037-4BE4-A44C-DC0E9612AA00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{182FB604-3143-4499-877E-FD58E803454E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{182FB604-3143-4499-877E-FD58E803454E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,9 +12,34 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Products/GetProducts"
-    }   
+    },
+    // Auth Web API
+    {
+      "UpstreamPathTemplate": "/api/account/login",
+      "UpstreamHttpMethod": [  "Post"],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "webapi4",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/account/login"
+    },
+    {
+      "UpstreamPathTemplate": "/api/account/register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "webapi4",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/account/register"
+    }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:55100"
+    "BaseUrl": "http://localhost:5105"
   }
 }

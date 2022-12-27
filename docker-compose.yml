@@ -20,6 +20,21 @@ services:
     #- DB_Name=aownew
     #- DB_SA_Password=Password#1
 
+  db:    
+    image: mysql:8.0.31-debian
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Password#1
+      MYSQL_DATABASE: phyadmindb
+      MYSQL_USER: myadminuser
+      MYSQL_PASSWORD: Password#1
+    networks:
+      - phpmyadmin-network
+
   aowdb:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     container_name: sql_server2022
@@ -40,6 +55,35 @@ services:
       - MYSQL_ROOT_PASSWORD=Password#1
     networks:
       - webapinetwork
+
+  db:    
+    image: mysql:8.0.31-debian
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Password#1
+      MYSQL_DATABASE: phyadmindb
+      MYSQL_USER: myadminuser
+      MYSQL_PASSWORD: Password#1
+    networks:
+      - phpmyadmin-network
+ 
+  phpmyadmin:   
+    depends_on: - db
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: Password#1
+	MYSQL_USER: myadminuser
+      MYSQL_PASSWORD: Password#1
+    networks:
+      - phpmyadmin-network
 
   webapi3:
     image: ${DOCKER_REGISTRY-}webapi3
